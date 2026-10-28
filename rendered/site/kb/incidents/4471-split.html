@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_app/immutable/entry/start.BslTTG65.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CHsAr61o.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dy_zLOKp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/4yth-QJC.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.ChD4lbKf.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/ljd_gPXV.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CbdF3lbi.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D5kKzAcA.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CIEhXfPR.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BkiYoOm_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/eAxXFRL1.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.BT1GOCJo.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C45gtA2L.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Fba2epY4.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/kUF3YEjL.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D3-pvf3S.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 · three problems, not one · support kb</title>
+		<link href="../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/CauseTable.CHcOp5oj.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/5.CMZ6TBbc.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Badr4u</b></span> <span class="status living svelte-e2jw2j">living</span> <span class="svelte-e2jw2j">reviewed 2026-10-28 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was merged as one issue with one fix queued. Its reports, read one by
+one, show three problems. Each now has its own ticket.</p> <aside class="warn svelte-17bri61"><!---->The queued parser fix closes only the first row below. The other two keep arriving after it ships.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>3</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">374</td><td class="tags svelte-12oyimm">parser ×351 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm"><!--[0--><a href="https://github.com/Badr4u/what-it-shows/issues/1">#1</a><!--]--></td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm"><!--[0--><a href="https://github.com/Badr4u/what-it-shows/issues/2">#2</a><!--]--></td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>shift</code></td><td class="svelte-12oyimm">5</td><td class="tags svelte-12oyimm">parser ×5</td><td class="svelte-12oyimm">5</td><td class="svelte-12oyimm">2026-04-02 → 2026-10-04</td><td class="svelte-12oyimm"><!--[0--><a href="https://github.com/Badr4u/what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <ul><li><strong>parser</strong> (<a href="https://github.com/Badr4u/what-it-shows/issues/1" rel="nofollow">ticket</a>): the shared parser reads
+every date month first, and every tenant on file writes the day first. Day and month swap.</li> <li><strong>hint</strong> (<a href="https://github.com/Badr4u/what-it-shows/issues/2" rel="nofollow">ticket</a>): the booking-v3 form prints <code>MM/DD/YYYY</code> under its date field, people type month first as told, and the form reads it day
+first. Same symptom, different code, only through the form of booking-v3 tenants.</li> <li><strong>shift</strong> (<a href="https://github.com/Badr4u/what-it-shows/issues/3" rel="nofollow">ticket</a>): the date moves by one day,
+or two people in different time zones see different days. Nothing is swapped. The desk had
+already noted these as one-day moves, but the table filed them under the parser.</li></ul> <h2>How it was read</h2> <ul><li>One report, one count: the export repeats reports across its pages, so every count here is by
+unique id.</li> <li>The cause comes from the report’s tenant and channel, and from what its body says. It does not
+come from the subject line or from intake’s tag. Every subject used in #4471 shows up under more
+than one cause, and intake tags by the reporter’s browser, so the “tagged as” column disagrees
+with the cause.</li> <li>Every body was read, not sampled. The swaps read as swaps; the one-day moves read as one-day moves.</li></ul> <h2>What to change on the desk</h2> <ul><li>Merging on subject alone (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>) is how three
+problems became one ticket. A new decision record should replace it; this page does not edit 0001.</li> <li>Before a big ticket is marked known, check its cause table. More than one row means more than one
+ticket.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-BQDN-Z4M6</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1k0h95n = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.BslTTG65.js"),
+						import("../../_app/immutable/entry/app.ChD4lbKf.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: Badr4u
+status: living
+reviewed: 2026-10-28
+signature: v1.eyJzdWIiOiI4MTAiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIwNjcyOCwiZXhwIjoxNzkzMjkzMTI4fQ.aIR2SaPUN7ltsiMX4jfv1gq1KXKR9zL1b0Qzrie15gA
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const filed = {
+    parser: 'https://github.com/Badr4u/what-it-shows/issues/1',
+    hint: 'https://github.com/Badr4u/what-it-shows/issues/2',
+    shift: 'https://github.com/Badr4u/what-it-shows/issues/3',
+  };
+</script>
+
+[#4471](/kb/incidents/4471) was merged as one issue with one fix queued. Its reports, read one by
+one, show three problems. Each now has its own ticket.
+
+<Callout kind="warn">
+The queued parser fix closes only the first row below. The other two keep arriving after it ships.
+</Callout>
+
+## What #4471 holds
+
+<CauseTable ticket={4471} {filed} />
+
+- **parser** ([ticket](https://github.com/Badr4u/what-it-shows/issues/1)): the shared parser reads
+  every date month first, and every tenant on file writes the day first. Day and month swap.
+- **hint** ([ticket](https://github.com/Badr4u/what-it-shows/issues/2)): the booking-v3 form prints
+  `MM/DD/YYYY` under its date field, people type month first as told, and the form reads it day
+  first. Same symptom, different code, only through the form of booking-v3 tenants.
+- **shift** ([ticket](https://github.com/Badr4u/what-it-shows/issues/3)): the date moves by one day,
+  or two people in different time zones see different days. Nothing is swapped. The desk had
+  already noted these as one-day moves, but the table filed them under the parser.
+
+## How it was read
+
+- One report, one count: the export repeats reports across its pages, so every count here is by
+  unique id.
+- The cause comes from the report's tenant and channel, and from what its body says. It does not
+  come from the subject line or from intake's tag. Every subject used in #4471 shows up under more
+  than one cause, and intake tags by the reporter's browser, so the "tagged as" column disagrees
+  with the cause.
+- Every body was read, not sampled. The swaps read as swaps; the one-day moves read as one-day moves.
+
+## What to change on the desk
+
+- Merging on subject alone ([decision 0001](/kb/decisions/0001-dedupe-by-subject)) is how three
+  problems became one ticket. A new decision record should replace it; this page does not edit 0001.
+- Before a big ticket is marked known, check its cause table. More than one row means more than one
+  ticket.
+
+<RenderStamp {signature} />
